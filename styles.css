@@ -11,7 +11,7 @@ header {
     flex-direction: row;
     /* justify-content: center; */
     background-color: #333;
-    color: #fff;
+    color: #52bd32;
     padding: 0px 20px;
     box-sizing: border-box;
     /* text-align: center; */
@@ -22,12 +22,24 @@ header {
   margin-left: auto;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+}
+.game-menu-link {
+  font-weight: bold;
+  color: rgb(184, 39, 212);
 }
 .games-links span {
   cursor: pointer;
   margin-left: 20px;
+}
+.game-header-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0px;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(204, 204, 204, 0.5), rgba(51, 51, 51, 0.7));
 }
 h1 {
   display: inline-block;
@@ -90,7 +102,7 @@ header .icon {
   height: 50px;
 }
 
-.action-icon {
+.hero-action-icon {
   position: absolute;
   display: flex;
   width: 200px;
@@ -101,7 +113,7 @@ header .icon {
   transform: translate(-50%, -50%);
   z-index: 4;
 }
-.action-icon img {
+.hero-action-icon img {
   max-width: 200px;
 }
 .mic-container {
@@ -191,4 +203,7 @@ header .icon {
 .reviews-container {
   height: 200px;
   border: 1px solid green;
+}
+.hidden {
+  display: none;
 }

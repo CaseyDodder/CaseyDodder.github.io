@@ -7,8 +7,6 @@
       <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
       <link rel="stylesheet" type="text/css" href="styles.css"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-      
-
   </head>
   <body>
       <header>
@@ -16,17 +14,19 @@
         <h1>Cuscuta Games</h1>
       </header>
       <div class="games-links">
-        <span>Disc Golf Arcade</span>
-        <span>Untitled Racing Game</span>
+        <span class="game-menu-link disc-golf-arcade-menu-btn">Disc Golf Arcade</span>
+        <span class="game-menu-link racing-game-menu-btn">Untitled Racing Game</span>
       </div>
+      <h3 class="game-header-title">Disc Golf Arcade</h3>
       <div class="container">
         <div class="hero-container">
             <div class="hero-mask"></div>
             <img class="hero-container-img" src="images/disc-golf-arcade/main-image.png" alt="Hero Image">
-            <a class="action-icon" href='https://play.google.com/store/apps/details?id=com.Cuscuta.DiscGolfArcade&hl=en_US&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+            <a class="hero-action-icon" href='https://play.google.com/store/apps/details?id=com.Cuscuta.DiscGolfArcade&hl=en_US&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
           </div>
           <div class="mic-container">
-            <div class="mic-slider">
+            <!-- Default Slider (Disc Golf) -->
+            <div class="mic-slider default-slider">
               <img class="mic-slider__image" src="images/disc-golf-arcade/woods-2.jpg" alt="Image 1">
               <img class="mic-slider__image" src="images/disc-golf-arcade/farm.jpg" alt="Image 2">
               <img class="mic-slider__image" src="images/disc-golf-arcade/mountains.jpg" alt="Image 3">
@@ -34,6 +34,17 @@
               <img class="mic-slider__image" src="images/disc-golf-arcade/city-2.jpg" alt="Image 5">
               <img class="mic-slider__image" src="images/disc-golf-arcade/dark-woods.jpg" alt="Image 6">
               <img class="mic-slider__image" src="images/disc-golf-arcade/zombie.jpg" alt="Image 7">
+            </div>
+            <!-- Racing Game Slider -->
+            <div class="mic-slider racing-game-slider hidden">
+              <img class="mic-slider__image" src='images/racing-game/mushroom-track.png' alt="Image 1">
+              <img class="mic-slider__image" src='images/racing-game/island-track.png' alt="Image 2">
+              <img class="mic-slider__image" src='images/racing-game/farm-track.png' alt="Image 3">
+              <img class="mic-slider__image" src='images/racing-game/snow-track.png' alt="Image 4">
+              <img class="mic-slider__image" src='images/racing-game/cemetary-track.png' alt="Image 5">
+              <img class="mic-slider__image" src='images/racing-game/woods-track.png' alt="Image 6">
+              <img class="mic-slider__image" src='images/racing-game/volcano-track.png' alt="Image 7">
+              <img class="mic-slider__image" src='images/racing-game/construction-track.png' alt="Image 8">
             </div>
             <div class="mic-img-and-copy">
               <div class="mic-img-and-copy-container">
@@ -86,78 +97,35 @@
 <script type="text/javascript" src="jquery/jquery-3.7.0.min.js"></script>
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-
-<script>
-  $(document).ready(function() {
-    $('.mic-slider').slick({
-      infinite: true,
-      speed: 200,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoPlay: true,
-      variableWidth: true,
-      // variableWidth: true,
-      centerMode: true,
-      // centerPadding: "20px",
-      // centerPadding: "50px",
-      adaptiveHeight: true,
-      prevArrow: '<span type="span" class="slick-prev"><i class="fas fa-arrow-left"></i></span>',
-      nextArrow: '<span type="span" class="slick-next"><i class="fas fa-arrow-right"></i></span>',
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    });
-  });
-</script>
+<script type="text/javascript" src="javascript.js"></script>
 <!-- YOUTUBE -->
 <script async src="https://www.youtube.com/iframe_api"></script>
 <script>
- function onYouTubeIframeAPIReady() {
-  var player;
-  player = new YT.Player('youtubePlayer', {
-    videoId: 'coHIXJtTT3k', // YouTube Video ID
-    width: 560,               // Player width (in px)
-    height: 316,              // Player height (in px)
-    playerVars: {
-      autoplay: 1,        // Auto-play the video on load
-      controls: 0,        // Show pause/play buttons in player
-      showinfo: 0,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
-      loop: 1,            // Run the video in a loop
-      fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
-      iv_load_policy: 3,  // Hide the Video Annotations
-      autohide: 0         // Hide video controls when playing
-    },
-    events: {
-      onReady: function(e) {
-        e.target.mute();
+  // YOUTUBE
+  function onYouTubeIframeAPIReady() {
+    var player;
+    player = new YT.Player('youtubePlayer', {
+      videoId: 'coHIXJtTT3k', // YouTube Video ID
+      width: 560,               // Player width (in px)
+      height: 316,              // Player height (in px)
+      playerVars: {
+        autoplay: 1,        // Auto-play the video on load
+        controls: 0,        // Show pause/play buttons in player
+        showinfo: 0,        // Hide the video title
+        modestbranding: 1,  // Hide the Youtube Logo
+        loop: 1,            // Run the video in a loop
+        fs: 0,              // Hide the full screen button
+        cc_load_policy: 0, // Hide closed captions
+        iv_load_policy: 3,  // Hide the Video Annotations
+        autohide: 0         // Hide video controls when playing
+      },
+      events: {
+        onReady: function(e) {
+          e.target.mute();
+        }
       }
-    }
-  });
- }
-
- // Written by @labnol 
+    });
+  }
 </script>
+
 
