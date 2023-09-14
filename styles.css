@@ -17,6 +17,9 @@ header {
     /* text-align: center; */
     /* padding: 1em 0; */
     /* height: 200px; */
+    @media screen and w {
+      
+    }
 }
 .games-links {
   margin-left: auto;
@@ -206,4 +209,22 @@ header .icon {
 }
 .hidden {
   display: none;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+  .mic-container {
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+  }
+  .slick-prev{
+    left: 20px;
+  }
+  .slick-next {
+    right: 20px;
+  }
+  #youtubePlayer {
+    max-width: 100%;
+  }
 }
