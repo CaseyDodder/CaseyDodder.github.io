@@ -17,10 +17,15 @@ $(document).ready(function () {
     ],
     iconAndTextCopy: [
       '3 Game modes including Circuit, Gauntlet and Time Trial.',
-      '16 Tracks',
+      '16 Unique Tracks',
       'Local Co-op circuit mode',
     ],
-    aboutGame: "about game text",
+    aboutGame: "Get ready to embark on a nostalgic journey back to the golden era of arcade gaming with RetroRush! This top-down racing game pays homage to the classic arcade racers of yesteryears, offering an adrenaline-pumping experience that will have you hooked from the moment you hit the accelerator.</br></br>Local Co-op: Grab your friends and family for some retro-inspired racing fun. With local co-op support, you can race head-to-head or team up in Gauntlet Mode. Experience the joy of multiplayer arcade action on the same screen, just like the good old days.",
+    gameModes: [
+      "<span>Time Trial Mode:</span> Race against the clock as you navigate a series of challenging tracks. Precision and speed are the keys to victory in this mode, where shaving off milliseconds is the ultimate goal.",
+      "<span>Circuit Mode:</span> Immerse yourself in the world of championship racing as you compete in a thrilling series of circuits. Take on AI opponents in a fierce battle for first place. With 16 unique tracks and 16 reverse tracks, every race presents a new challenge, requiring mastery of both offensive and defensive driving skills.",
+      "<span>Gauntlet Mode:</span> Test your mettle in this high-stakes mode, where you'll face off against a relentless horde of AI racers. The pressure is on as you attempt to survive wave after wave of opponents while collecting power-ups to stay ahead.",
+    ]
   };
   const discGolfGameObject = {
     gameTitle: 'Disc Golf Arcade',
@@ -42,6 +47,7 @@ $(document).ready(function () {
       'Retro soundtrack',
     ],
     aboutGame: "With intuitive controls and 100+ challenging levels, you'll be able to master your virtual disc throwing skills. Immerse yourself with unique 2D physics and dynamic environments, including forests, farms, beaches, space and the matrix! With each level offering a unique challenge, you'll be able to test your skills and improve your technique. Download now and join the fun!",
+    gameModes: [],
   };
 
   $('.game-menu-link').on('click', function() {
@@ -95,6 +101,12 @@ $(document).ready(function () {
       $(this).html(iconTextArray[index]);
     });
     $('.about-game .copy').html(gameObject.aboutGame);
+
+    // About Game Section.
+    $('.about-game__container').empty();
+    gameObject.gameModes.forEach(function (value) {
+      $('.about-game__container').append(`<div>${value}</div>`);
+    });
   }
 
   // SLICK SLIDER

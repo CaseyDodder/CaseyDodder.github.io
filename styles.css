@@ -188,7 +188,6 @@ header .icon {
 }
 .about-game {
   border: 1px solid purple;
-  height: 200px;
   padding: 20px 0px;
 }
 .about-game .copy {
@@ -196,7 +195,7 @@ header .icon {
 }
 .about-game__container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 .video-container {
