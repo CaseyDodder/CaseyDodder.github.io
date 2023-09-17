@@ -3,7 +3,7 @@ $(document).ready(function () {
   // Racing Game Object
   const racingGameObject = {
     gameTitle: 'Racing Game',
-    heroImage: 'images/racing-game/woods-track.png',
+    heroImage: null,
     actionIcon: false,
     sliderClass: '.racing-game-slider',
     sliderImages: [
@@ -17,9 +17,18 @@ $(document).ready(function () {
       'images/racing-game/construction-track.png',
     ],
     iconAndTextCopy: [
-      '3 Game modes including Circuit, Gauntlet and Time Trial.',
-      '16 Unique Tracks',
-      'Local Co-op circuit mode',
+      [
+        `<i class="fas fa-gamepad"></i>`,
+        '3 Game modes',
+      ],
+      [
+        `<i class="fas fa-layer-group"></i>`,
+        '16 Unique Tracks',
+      ],
+      [
+        `<i class="fas fa-users"></i>`,
+        'Local Co-op',
+      ],
     ],
     aboutGame: "Get ready to embark on a nostalgic journey back to the golden era of arcade gaming with RetroRush! This top-down racing game pays homage to the classic arcade racers of yesteryears, offering an adrenaline-pumping experience that will have you hooked from the moment you hit the accelerator.</br></br>",
     gameModes: [
@@ -45,6 +54,14 @@ $(document).ready(function () {
       ],
     ],
     videoClass: '.racing-game-video',
+    socialButtons: [
+      [
+        `<img src="images/racing-game/steam-wishlist.jpg" style="max-width: 150px;">`,
+      ],
+      [
+        `<a href="https://twitter.com/CuscutaOfficial"><i class="fab fa-twitter"></i></a>`,
+      ],
+    ]
   };
   // Disc Golf Game Object
   const discGolfGameObject = {
@@ -62,13 +79,30 @@ $(document).ready(function () {
       'images/disc-golf-arcade/zombie.jpg',
     ],
     iconAndTextCopy: [
-      '100+ challenging holes to master',
-      '12 unique courses',
-      'Retro soundtrack',
+      [
+        `<i class="fas fa-gamepad"></i>`,
+        '100+ challenging holes to master',
+      ],
+      [
+        `<i class="fas fa-layer-group"></i>`,
+        '12 unique courses',
+      ],
+      [
+        `<i class="fas fa-music"></i>`,
+        'Retro soundtrack',
+      ],
     ],
     aboutGame: "With intuitive controls and 100+ challenging levels, you'll be able to master your virtual disc throwing skills. Immerse yourself with unique 2D physics and dynamic environments, including forests, farms, beaches, space and the matrix! With each level offering a unique challenge, you'll be able to test your skills and improve your technique. Download now and join the fun!",
     gameModes: [],
     videoClass: '#youtubePlayer',
+    socialButtons: [
+      [
+        `<div><a href='https://play.google.com/store/apps/details?id=com.Cuscuta.DiscGolfArcade&hl=en_US&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' style="max-width: 150px;"/></a></div>`,
+      ],
+      [
+        `<a href="https://twitter.com/CuscutaOfficial"><i class="fab fa-twitter"></i></a>`,
+      ],
+    ]
   };
 
   $('.game-menu-link').on('click', function() {
@@ -96,7 +130,15 @@ $(document).ready(function () {
 
   function populateGameItems (gameObject) {
     // Hero.
-    $('.hero-container-img').attr('src', gameObject.heroImage);
+    $('.hero-container-img').removeClass('hidden');
+    $('.mic-container').css('marginTop', '-80px');
+    if (gameObject.heroImage) {
+      $('.hero-container-img').attr('src', gameObject.heroImage)
+    }
+    else {
+      $('.hero-container-img').addClass('hidden')
+      $('.mic-container').css('marginTop', 'initial');
+    }
     $('.game-header-title').html(gameObject.gameTitle);
     if (gameObject.actionIcon) {
       $('.hero-action-icon').show();
@@ -118,8 +160,9 @@ $(document).ready(function () {
 
     // Icon & Text.
     const iconTextArray = gameObject.iconAndTextCopy;
-    $('.mic-img-and-copy-container__copy').each(function (index) {
-      $(this).html(iconTextArray[index]);
+    $('.mic-img-and-copy-container').each(function (index) {
+      const elements = iconTextArray[index];
+      $(this).html(`${elements[0]}<div class="mic-img-and-copy-container__copy">${elements[1]}</div>`);
     });
     $('.about-game .copy').html(gameObject.aboutGame);
 
@@ -145,7 +188,17 @@ $(document).ready(function () {
       $(gameObject.videoClass).removeClass('hidden');
       // $(this).hide();
       // $('#youtubePlayer').addClass('hidden');
-    })
+    });
+
+    // FOOTER
+    $(".footer-social-button").each(function (index, value) {
+      console.log(index);
+      console.log($(this).html());
+      console.log("looping buttons");
+      const socialHtml = gameObject.socialButtons[index] ? gameObject.socialButtons[index] : '';
+      console.log(socialHtml);
+      $(this).html(socialHtml);
+    });
   }
 
   // SLICK SLIDER
