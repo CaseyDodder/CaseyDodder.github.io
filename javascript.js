@@ -2,7 +2,7 @@ $(document).ready(function () {
   let currentSliderClass = '.default-slider';
   // Racing Game Object
   const racingGameObject = {
-    gameTitle: 'Racing Game',
+    gameTitle: 'Retro Rush!',
     heroImage: null,
     actionIcon: false,
     sliderClass: '.racing-game-slider',
@@ -30,11 +30,11 @@ $(document).ready(function () {
         'Local Co-op',
       ],
     ],
-    aboutGame: "Get ready to embark on a nostalgic journey back to the golden era of arcade gaming with RetroRush! This top-down racing game pays homage to the classic arcade racers of yesteryears, offering an adrenaline-pumping experience that will have you hooked from the moment you hit the accelerator.</br></br>",
-    gameModes: [
+    aboutGame: "Get ready to embark on a nostalgic journey back to the golden era of arcade gaming with Retro Rush! This top-down racing game pays homage to the classic arcade racers of yesteryears, offering an adrenaline-pumping experience that will have you hooked from the moment you hit the accelerator.</br></br>",
+    features: [
       [
         "Local Co-op",
-        "Grab your friends and family for some retro-inspired racing fun. With local co-op support, you can race head-to-head or team up in Gauntlet Mode. Experience the joy of multiplayer arcade action on the same screen, just like the good old days.",
+        "Grab your friends and family for some retro-inspired racing fun. With local co-op support, you can race head-to-head in Circuit Mode. Experience the joy of multiplayer arcade action on the same screen, just like the good old days.",
         `<i class="fas fa-users"></i>`,
       ],
       [
@@ -49,7 +49,7 @@ $(document).ready(function () {
       ],
       [
         "Gauntlet Mode",
-        "Test your mettle in this high-stakes mode, where you'll face off against a relentless horde of AI racers. The pressure is on as you attempt to survive wave after wave of opponents while collecting power-ups to stay ahead.",
+        "Test your mettle in this high-stakes mode, where you'll face off against a relentless horde of AI racers. The pressure is on as you attempt to survive wave after wave of increasingly difficult opponents while collecting power-ups to stay ahead.",
         `<i class="fas fa-car-crash"></i>`,
       ],
     ],
@@ -81,7 +81,7 @@ $(document).ready(function () {
     iconAndTextCopy: [
       [
         `<i class="fas fa-gamepad"></i>`,
-        '100+ challenging holes to master',
+        '100+ holes',
       ],
       [
         `<i class="fas fa-layer-group"></i>`,
@@ -93,7 +93,28 @@ $(document).ready(function () {
       ],
     ],
     aboutGame: "With intuitive controls and 100+ challenging levels, you'll be able to master your virtual disc throwing skills. Immerse yourself with unique 2D physics and dynamic environments, including forests, farms, beaches, space and the matrix! With each level offering a unique challenge, you'll be able to test your skills and improve your technique. Download now and join the fun!",
-    gameModes: [],
+    features: [
+      [
+        "Hole Challenges",
+        "Immerse yourself in the game as you aim to conquer hole-specific objectives. Whether it's escaping the clutches of jumping sharks or navigating through turbulent tornadoes, each hole brings a new, exciting challenge to master.",
+        `<i class="fas fa-users"></i>`,
+      ],
+      [
+        "Stat Tracking",
+        "Track your best round on each course, count your total aces, work to improve your average course score and aim for the most aces in a single round.",
+        `<i class="fas fa-stopwatch"></i>`,
+      ],
+      [
+        "Gameplay Mechanics",
+        "Engage in gameplay reminiscent of puzzle-solving as you decipher the optimal trajectory for each throw. Every shot requires careful planning and precision. Navigate the unpredictable wind patterns that affect your disc's flight path. Factor in wind speed and direction to make those critical shots. Embrace the versatility of your disc by mastering the art of ground bounces. Bounce your disc strategically to navigate tricky terrains and achieve those hard-to-reach targets.",
+        `<i class="fas fa-flag-checkered"></i>`,
+      ],
+      [
+        "Unique Challenges",
+        "Navigate unpredictable hazards like jumping sharks, tornadoes, and more, while conquering hole-specific objectives and unlocking content along the way.",
+        `<i class="fas fa-car-crash"></i>`,
+      ],
+    ],
     videoClass: '#youtubePlayer',
     socialButtons: [
       [
@@ -131,13 +152,13 @@ $(document).ready(function () {
   function populateGameItems (gameObject) {
     // Hero.
     $('.hero-container-img').removeClass('hidden');
-    $('.mic-container').css('marginTop', '-80px');
+    // $('.mic-container').css('marginTop', '-80px');
     if (gameObject.heroImage) {
       $('.hero-container-img').attr('src', gameObject.heroImage)
     }
     else {
       $('.hero-container-img').addClass('hidden')
-      $('.mic-container').css('marginTop', 'initial');
+      // $('.mic-container').css('marginTop', 'initial');
     }
     $('.game-header-title').html(gameObject.gameTitle);
     if (gameObject.actionIcon) {
@@ -168,7 +189,8 @@ $(document).ready(function () {
 
     // About Game Section.
     $('.about-game__container').empty();
-    gameObject.gameModes.forEach(function (value) {
+    gameObject.features.forEach(function (value) {
+      console.log(value);
       $('.about-game__container').append(`
         <div class="game-mode-dropdown">
           <div class="game-mode-dropdown--innner">
@@ -183,20 +205,21 @@ $(document).ready(function () {
 
     // VIDEO
     $('.video-container div').each(function () {
+      let racingGameVideo = $('.racing-game-video');
       $('#youtubePlayer').addClass('hidden');
-      $('.racing-game-video').addClass('hidden');
+      racingGameVideo.addClass('hidden');
       $(gameObject.videoClass).removeClass('hidden');
-      // $(this).hide();
-      // $('#youtubePlayer').addClass('hidden');
+      if (gameObject.videoClass === ".racing-game-video" && !racingGameVideo.attr('data-loaded')) {
+        let racingGameIframe = $('.racing-game-iframe');
+        const iframeSrc = $(racingGameIframe).attr('src');
+        $('.racing-game-iframe').attr('src', iframeSrc)
+        $(racingGameVideo).attr('data-loaded', 'true');
+      }
     });
 
     // FOOTER
     $(".footer-social-button").each(function (index, value) {
-      console.log(index);
-      console.log($(this).html());
-      console.log("looping buttons");
       const socialHtml = gameObject.socialButtons[index] ? gameObject.socialButtons[index] : '';
-      console.log(socialHtml);
       $(this).html(socialHtml);
     });
   }

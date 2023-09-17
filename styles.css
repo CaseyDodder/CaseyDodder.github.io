@@ -15,10 +15,12 @@ header {
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
-    background-color: #333;
-    color: #52bd32;
+    background-color: rgb(0, 0, 0);
+    color: #4dd325;
     padding: 0px 20px;
     box-sizing: border-box;
+    /* box-shadow: 0px 2px 4px rgb(0, 0, 0);
+    z-index: 1; */
     /* text-align: center; */
     /* padding: 1em 0; */
     /* height: 200px; */
@@ -32,10 +34,13 @@ header {
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
+  background-color:#55b43a;
+  box-shadow: 0px 1px 1px #55b43a;
+  z-index: 2;
 }
 .game-menu-link {
   font-weight: bold;
-  color: rgb(184, 39, 212);
+  color: rgb(240, 240, 240);
 }
 .games-links span {
   cursor: pointer;
@@ -48,7 +53,11 @@ header {
   width: 100%;
   margin: 0px;
   padding: 20px;
-  background: linear-gradient(to bottom, rgba(204, 204, 204, 0.3), rgba(100, 100, 100, .5));
+  font-size: 1.5em;
+  background-color: rgb(40, 40, 40);
+  color: rgb(240, 240, 240);
+  z-index: 1;
+  /* background: linear-gradient(to bottom, rgba(204, 204, 204, 0.3), rgba(100, 100, 100, .5)); */
 }
 .fa-chevron-down {
   position: absolute !important;
@@ -95,7 +104,7 @@ header .icon {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
   pointer-events: none; 
   z-index: 2;
 }
@@ -130,15 +139,24 @@ header .icon {
 .hero-action-icon img {
   max-width: 200px;
 }
+.slick-slider-section {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto 0px auto;
+  /* background: linear-gradient(to bottom, #555555, #000000); */
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
 .mic-container {
   position: relative;
   /* border: 1px solid red; */
   width: 85%;
-  margin: 0 auto;
+  padding: 40px 0px 10px 0px;
   max-height: 450px;
   z-index: 4;
-  margin-top: -80px;
   box-sizing: border-box;
+  
   /* display: flex;
   flex-direction: column;
   justify-content: space-around; */
@@ -187,6 +205,7 @@ header .icon {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  margin: 20px 0px 0px 0px;
 }
 .mic-img-and-copy-container {
   display: flex;
@@ -201,6 +220,10 @@ header .icon {
 }
 .about-game {
   padding: 20px 0px;
+  /* background: linear-gradient(to bottom, #888888, #555555); */
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .about-game-header {
   font-weight: bold;
@@ -215,7 +238,11 @@ header .icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 0px 20px 0px;
+  padding: 20px 0px 20px 0px;
+  /* background: linear-gradient(to bottom, #888888, #555555); */
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .game-mode-dropdown{
   display: flex;
@@ -278,7 +305,7 @@ footer .copyright {
 .footer-social-button {
   position: relative;
   display: inline-flex;
-  margin: 0px 5px;
+  margin: 0px 10px;
 }
 
 /* Mobile */
@@ -302,7 +329,15 @@ footer .copyright {
   .mic-container {
     width: 100%;
     margin: 20px 0px 0px 0px;
+    /* display: inline-flex; */
+    /* flex-direction: column; */
   }
+  /* .mic-slider {
+    order: 2;
+  }
+  .mic-img-and-copy {
+    order: 1;
+  } */
   .slick-prev{
     left: 20px;
   }
