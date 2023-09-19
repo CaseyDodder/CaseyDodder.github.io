@@ -7,14 +7,14 @@ $(document).ready(function () {
     actionIcon: false,
     sliderClass: '.racing-game-slider',
     sliderImages: [
-      'images/racing-game/mushroom-track.png',
-      'images/racing-game/island-track.png',
-      'images/racing-game/farm-track.png',
-      'images/racing-game/snow-track.png',
-      'images/racing-game/cemetary-track.png',
-      'images/racing-game/lighthouse-track.png',
-      'images/racing-game/volcano-track.png',
-      'images/racing-game/construction-track.png',
+      'images/racing-game/compressed/mushroom-track.jpg',
+      'images/racing-game/compressed/island-track.jpg',
+      'images/racing-game/compressed/farm-track.jpg',
+      'images/racing-game/compressed/snow-track.jpg',
+      'images/racing-game/compressed/cemetary-track.jpg',
+      'images/racing-game/compressed/lighthouse-track.jpg',
+      'images/racing-game/compressed/volcano-track.jpg',
+      'images/racing-game/compressed/construction-track.jpg',
     ],
     iconAndTextCopy: [
       [
@@ -66,17 +66,17 @@ $(document).ready(function () {
   // Disc Golf Game Object
   const discGolfGameObject = {
     gameTitle: 'Disc Golf Arcade',
-    heroImage: 'images/disc-golf-arcade/main-image.png',
+    heroImage: 'images/disc-golf-arcade/compressed/main-image.png',
     actionIcon: true,
     sliderClass: '.default-slider',
     sliderImages: [
-      'images/disc-golf-arcade/woods-2.jpg',
-      'images/disc-golf-arcade/farm.jpg',
-      'images/disc-golf-arcade/mountains.jpg',
-      'images/disc-golf-arcade/beach.jpg',
-      'images/disc-golf-arcade/city-2.jpg',
-      'images/disc-golf-arcade/dark-woods.jpg',
-      'images/disc-golf-arcade/zombie.jpg',
+      'images/disc-golf-arcade/compressed/woods-2.jpg',
+      'images/disc-golf-arcade/compressed/farm.jpg',
+      'images/disc-golf-arcade/compressed/mountains.jpg',
+      'images/disc-golf-arcade/compressed/beach.jpg',
+      'images/disc-golf-arcade/compressed/city-2.jpg',
+      'images/disc-golf-arcade/compressed/dark-woods.jpg',
+      'images/disc-golf-arcade/compressed/zombie.jpg',
     ],
     iconAndTextCopy: [
       [
