@@ -66,7 +66,7 @@ $(document).ready(function () {
   // Disc Golf Game Object
   const discGolfGameObject = {
     gameTitle: 'Disc Golf Arcade',
-    heroImage: 'images/disc-golf-arcade/compressed/main-image.png',
+    heroImage: 'images/disc-golf-arcade/main-image.png',
     actionIcon: true,
     sliderClass: '.default-slider',
     sliderImages: [
