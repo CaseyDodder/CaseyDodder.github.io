@@ -4,10 +4,10 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Cuscuta Games - Indie Game Developer</title>
-      <meta name="description" content="Welcome to the world of top-down racing in our retro-inspired indie game. Immerse yourself in the nostalgia of classic arcade racing as you take the wheel and compete in thrilling races. Download now for an authentic indie racing experience.">
+      <meta name="description" content="Welcome to the world of top-down racing in our retro-inspired racing game. Immerse yourself in the nostalgia of classic arcade racing as you take the wheel and compete in thrilling races. Wishlist now and tell a friend to get ready for this throwback experience.">
   
       <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-      <link rel="stylesheet" type="text/css" href="styles.css"/>
+      <link rel="stylesheet" type="text/css" href="styles.min.css"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </head>
   <!-- Google tag (gtag.js) -->
@@ -25,20 +25,20 @@
         <h1>Cuscuta Games</h1>
       </header>
       <div class="games-links">
+        <span class="game-menu-link racing-game-menu-btn">Retro Rally!</span>
         <span class="game-menu-link disc-golf-arcade-menu-btn">Disc Golf Arcade</span>
-        <span class="game-menu-link racing-game-menu-btn">Retro Rush!</span>
       </div>
-      <h3 class="game-header-title">Disc Golf Arcade</h3>
+      <h3 class="game-header-title">Retro Rally!</h3>
       <div class="container">
         <div class="hero-container">
             <div class="hero-mask"></div>
-            <img class="hero-container-img" src="images/disc-golf-arcade/main-image.png" alt="Hero Image">
-            <a class="hero-action-icon" href='https://play.google.com/store/apps/details?id=com.Cuscuta.DiscGolfArcade&hl=en_US&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+            <img class="hero-container-img" src="images/retro-rally/main-image.jpg" alt="Hero Image">
+            <!-- <a class="hero-action-icon" href='https://play.google.com/store/apps/details?id=com.Cuscuta.DiscGolfArcade&hl=en_US&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a> -->
         </div>
         <div class="slick-slider-section">
           <div class="mic-container">
             <!-- Default Slider (Disc Golf) -->
-            <div class="mic-slider default-slider">
+            <div class="mic-slider hidden">
               <img class="mic-slider__image" src="images/disc-golf-arcade/compressed/woods-2.jpg" alt="Image 1">
               <img class="mic-slider__image" src="images/disc-golf-arcade/compressed/farm.jpg" alt="Image 2">
               <img class="mic-slider__image" src="images/disc-golf-arcade/compressed/mountains.jpg" alt="Image 3">
@@ -48,82 +48,83 @@
               <img class="mic-slider__image" src="images/disc-golf-arcade/compressed/zombie.jpg" alt="Image 7">
             </div>
             <!-- Racing Game Slider -->
-            <div class="mic-slider racing-game-slider hidden">
-              <img class="mic-slider__image" src='images/racing-game/compressed/mushroom-track.jpg' alt="Image 1">
-              <img class="mic-slider__image" src='images/racing-game/compressed/island-track.jpg' alt="Image 2">
-              <img class="mic-slider__image" src='images/racing-game/compressed/farm-track.jpg' alt="Image 3">
-              <img class="mic-slider__image" src='images/racing-game/compressed/snow-track.jpg' alt="Image 4">
-              <img class="mic-slider__image" src='images/racing-game/compressed/cemetary-track.jpg' alt="Image 5">
-              <img class="mic-slider__image" src='images/racing-game/compressed/woods-track.jpg' alt="Image 6">
-              <img class="mic-slider__image" src='images/racing-game/compressed/volcano-track.jpg' alt="Image 7">
-              <img class="mic-slider__image" src='images/racing-game/compressed/construction-track.jpg' alt="Image 8">
+            <div class="mic-slider default-slider racing-game-slider">
+              <img class="mic-slider__image" src='images/retro-rally/compressed/mushroom-track.jpg' alt="Image 1">
+              <img class="mic-slider__image" src='images/retro-rally/compressed/island-track.jpg' alt="Image 2">
+              <img class="mic-slider__image" src='images/retro-rally/compressed/farm-track.jpg' alt="Image 3">
+              <img class="mic-slider__image" src='images/retro-rally/compressed/snow-track.jpg' alt="Image 4">
+              <img class="mic-slider__image" src='images/retro-rally/compressed/cemetary-track.jpg' alt="Image 5">
+              <img class="mic-slider__image" src='images/retro-rally/compressed/woods-track.jpg' alt="Image 6">
+              <img class="mic-slider__image" src='images/retro-rally/compressed/volcano-track.jpg' alt="Image 7">
+              <img class="mic-slider__image" src='images/retro-rally/compressed/construction-track.jpg' alt="Image 8">
             </div>
             <div class="mic-img-and-copy">
               <div class="mic-img-and-copy-container">
                 <i class="fas fa-gamepad"></i>
-                <div class="mic-img-and-copy-container__copy">100+ holes</div>
+                <div class="mic-img-and-copy-container__copy">3 Game Modes</div>
               </div>
               <div class="mic-img-and-copy-container">
                 <i class="fas fa-layer-group"></i>
-                <div class="mic-img-and-copy-container__copy">12 unique courses</div>
+                <div class="mic-img-and-copy-container__copy">16 Unique Tracks</div>
               </div>
               <div class="mic-img-and-copy-container">
-                <i class="fas fa-music"></i>
-                <div class="mic-img-and-copy-container__copy"> Retro soundtrack</div>
+                <i class="fas fa-users"></i>
+                <div class="mic-img-and-copy-container__copy">Local Co-op</div>
               </div>
             </div>
           </div>
         </div>
         <div class="about-game">
           <p class="about-game-header">About The Game</p>
-          <p class="copy">With intuitive controls and 100+ challenging levels, you'll be able to master your virtual disc throwing skills. Immerse yourself with unique 2D physics and dynamic environments, including forests, farms, beaches, space and the matrix! With each level offering a unique challenge, you'll be able to test your skills and improve your technique. Download now and join the fun!</p>
+          <p class="copy">Get ready to embark on a nostalgic journey back to the golden era of arcade gaming with Retro Rally! This top-down racing game pays homage to the classic arcade racers of yesteryears, offering an adrenaline-pumping experience that will have you hooked from the moment you hit the accelerator.</br></br></p>
         </div>
         <div class="about-game__container">
           <div class="game-mode-dropdown">
             <div class="game-mode-dropdown--innner">
-              <i class="fas fa-tasks"></i>
-              <span class="game-mode-title">Hole Challenges</span>
+              <i class="fas fa-users"></i>
+              <span class="game-mode-title">Local Co-op</span>
               <i class="fas fa-chevron-down"></i>
             </div>
             <div class="game-mode-dropdown-copy hidden">
-              Immerse yourself in the game as you aim to conquer hole-specific objectives. Whether it's escaping the clutches of jumping sharks or navigating through turbulent tornadoes, each hole brings a new, exciting challenge to master.
+              Grab your friends and family for some retro-inspired racing fun. With local co-op support, you can race head-to-head in Circuit Mode. Experience the joy of multiplayer arcade action on the same screen, just like the good old days.
             </div>
           </div>
           <div class="game-mode-dropdown">
             <div class="game-mode-dropdown--innner">
-              <i class="fas fa-chart-bar"></i>
-              <span class="game-mode-title">Stat Tracking</span>
+              <i class="fas fa-stopwatch"></i>
+              <span class="game-mode-title">Time Trial Mode</span>
               <i class="fas fa-chevron-down"></i>
             </div>
             <div class="game-mode-dropdown-copy hidden">
-              Track your best round on each course, count your total aces, work to improve your average course score and aim for the most aces in a single round.
+              Race against the clock as you navigate a series of challenging tracks. Precision and speed are the keys to victory in this mode, where shaving off milliseconds is the ultimate goal.
             </div>
           </div>
           <div class="game-mode-dropdown">
             <div class="game-mode-dropdown--innner">
-              <i class="fas fa-gamepad"></i>
-              <span class="game-mode-title">Gameplay Mechanics</span>
+              <i class="fas fa-flag-checkered"></i>
+              <span class="game-mode-title">Circuit Mode</span>
               <i class="fas fa-chevron-down"></i>
             </div>
             <div class="game-mode-dropdown-copy hidden">
-              Engage in gameplay reminiscent of puzzle-solving as you decipher the optimal trajectory for each throw. Every shot requires careful planning and precision. Navigate the unpredictable wind patterns that affect your disc's flight path. Factor in wind speed and direction to make those critical shots. Embrace the versatility of your disc by mastering the art of ground bounces. Bounce your disc strategically to navigate tricky terrains and achieve those hard-to-reach targets.
+              Immerse yourself in the world of championship racing as you compete in a thrilling series of circuits. Take on AI opponents in a fierce battle for first place. With 16 unique tracks and 16 reverse tracks, every race presents a new challenge, requiring mastery of both offensive and defensive driving skills.
             </div>
           </div>
           <div class="game-mode-dropdown">
             <div class="game-mode-dropdown--innner">
-              <i class="fas fa-fingerprint"></i>
-              <span class="game-mode-title">Unique Obstacles</span>
+              <i class="fas fa-car-crash"></i>
+              <span class="game-mode-title">Gauntlet Mode</span>
               <i class="fas fa-chevron-down"></i>
             </div>
             <div class="game-mode-dropdown-copy hidden">
-              Navigate unpredictable hazards like jumping sharks, tornadoes, and more, while conquering hole-specific objectives and unlocking content along the way.
+              Test your mettle in this high-stakes mode, where you'll face off against a relentless horde of AI racers. The pressure is on as you attempt to survive wave after wave of increasingly difficult opponents while collecting power-ups to stay ahead.
             </div>
           </div>
       </div>
       <div class="video-container">
-        <div id="youtubePlayer"></div>
-        <div class="racing-game-video hidden">
-          <iframe class="racing-game-iframe" width="560" height="315" src="https://www.youtube.com/embed/td54iLMy4VY?si=7ql-VVDWfNyA3QtN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- <div id="youtubePlayer"></div> -->
+        <div class="disc-golf-game-video youtube-container">
+          <!-- <iframe class="disc-golf-game-iframe" width="560" height="315" src="https://www.youtube.com/embed/coHIXJtTT3k?si=TBuEHwj5ldHaxJ9O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+          <iframe class="youtube-video-iframe" width="560" height="315" data-src="https://www.youtube.com/embed/td54iLMy4VY?si=-YD87rQy9f1fnLYz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
       <div class="reviews-container"></div>
@@ -134,11 +135,12 @@
         <div class="social-buttons">
           <div class="footer-social-button">
             <div>
-              <a href='https://play.google.com/store/apps/details?id=com.Cuscuta.DiscGolfArcade&hl=en_US&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' style="max-width: 150px;"/></a>
+              <img src="images/retro-rally/steam-wishlist.jpg" style="max-width: 150px;">
+              <!-- <a href='https://play.google.com/store/apps/details?id=com.Cuscuta.DiscGolfArcade&hl=en_US&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' style="max-width: 150px;"/></a> -->
             </div>
           </div>
           <div class="footer-social-button">
-            <a href="https://twitter.com/CuscutaOfficial">
+            <a href="https://twitter.com/cuscutagames">
               <i class="fab fa-twitter"></i>
             </a>
           </div>
@@ -154,20 +156,21 @@
 </html>
 <script type="text/javascript" src="jquery/jquery-3.7.0.min.js"></script>
 <script type="text/javascript" src="slick/slick.min.js"></script>
+<script type="text/javascript" src="javascript.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-<script type="text/javascript" src="javascript.js"></script>
 <!-- YOUTUBE -->
-<script async src="https://www.youtube.com/iframe_api"></script>
-<script>
+<!-- <script async src="https://www.youtube.com/iframe_api"></script> -->
+<!-- <script>
   // YOUTUBE
   function onYouTubeIframeAPIReady() {
     var player;
     player = new YT.Player('youtubePlayer', {
-      videoId: 'coHIXJtTT3k', // YouTube Video ID
+      videoId: 'td54iLMy4VY', // YouTube Video ID
+      // videoId: 'coHIXJtTT3k', // YouTube Video ID
       width: 560,               // Player width (in px)
       height: 316,              // Player height (in px)
       playerVars: {
-        autoplay: 1,        // Auto-play the video on load
+        autoplay: 0,        // Auto-play the video on load
         controls: 1,        // Show pause/play buttons in player
         showinfo: 0,        // Hide the video title
         modestbranding: 1,  // Hide the Youtube Logo
@@ -184,6 +187,6 @@
       }
     });
   }
-</script>
+</script> -->
 
 

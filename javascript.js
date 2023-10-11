@@ -2,19 +2,19 @@ $(document).ready(function () {
   let currentSliderClass = '.default-slider';
   // Racing Game Object
   const racingGameObject = {
-    gameTitle: 'Retro Rush!',
-    heroImage: null,
+    gameTitle: 'Retro Rally!',
+    heroImage:'images/retro-rally/main-image.jpg',
     actionIcon: false,
     sliderClass: '.racing-game-slider',
     sliderImages: [
-      'images/racing-game/compressed/mushroom-track.jpg',
-      'images/racing-game/compressed/island-track.jpg',
-      'images/racing-game/compressed/farm-track.jpg',
-      'images/racing-game/compressed/snow-track.jpg',
-      'images/racing-game/compressed/cemetary-track.jpg',
-      'images/racing-game/compressed/lighthouse-track.jpg',
-      'images/racing-game/compressed/volcano-track.jpg',
-      'images/racing-game/compressed/construction-track.jpg',
+      'images/retro-rally/compressed/mushroom-track.jpg',
+      'images/retro-rally/compressed/island-track.jpg',
+      'images/retro-rally/compressed/farm-track.jpg',
+      'images/retro-rally/compressed/snow-track.jpg',
+      'images/retro-rally/compressed/cemetary-track.jpg',
+      'images/retro-rally/compressed/lighthouse-track.jpg',
+      'images/retro-rally/compressed/volcano-track.jpg',
+      'images/retro-rally/compressed/construction-track.jpg',
     ],
     iconAndTextCopy: [
       [
@@ -30,7 +30,7 @@ $(document).ready(function () {
         'Local Co-op',
       ],
     ],
-    aboutGame: "Get ready to embark on a nostalgic journey back to the golden era of arcade gaming with Retro Rush! This top-down racing game pays homage to the classic arcade racers of yesteryears, offering an adrenaline-pumping experience that will have you hooked from the moment you hit the accelerator.</br></br>",
+    aboutGame: "Get ready to embark on a nostalgic journey back to the golden era of arcade gaming with Retro Rally! This top-down racing game pays homage to the classic arcade racers of yesteryears, offering an adrenaline-pumping experience that will have you hooked from the moment you hit the accelerator.</br></br>",
     features: [
       [
         "Local Co-op",
@@ -53,13 +53,14 @@ $(document).ready(function () {
         `<i class="fas fa-car-crash"></i>`,
       ],
     ],
-    videoClass: '.racing-game-video',
+    videoClass: '#youtubePlayer',
+    videoUrl: 'https://www.youtube.com/embed/td54iLMy4VY?si=-YD87rQy9f1fnLYz',
     socialButtons: [
       [
-        `<img src="images/racing-game/steam-wishlist.jpg" style="max-width: 150px;">`,
+        `<img src="images/retro-rally/steam-wishlist.jpg" style="max-width: 150px;">`,
       ],
       [
-        `<a href="https://twitter.com/CuscutaOfficial"><i class="fab fa-twitter"></i></a>`,
+        `<a href="https://twitter.com/cuscutagames"><i class="fab fa-twitter"></i></a>`,
       ],
     ]
   };
@@ -115,13 +116,14 @@ $(document).ready(function () {
         `<i class="fas fa-car-crash"></i>`,
       ],
     ],
-    videoClass: '#youtubePlayer',
+    videoClass: '.disc-golf-game-video',
+    videoUrl: 'https://www.youtube.com/embed/coHIXJtTT3k?si=TBuEHwj5ldHaxJ9O',
     socialButtons: [
       [
         `<div><a href='https://play.google.com/store/apps/details?id=com.Cuscuta.DiscGolfArcade&hl=en_US&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' style="max-width: 150px;"/></a></div>`,
       ],
       [
-        `<a href="https://twitter.com/CuscutaOfficial"><i class="fab fa-twitter"></i></a>`,
+        `<a href="https://twitter.com/cuscutagames"><i class="fab fa-twitter"></i></a>`,
       ],
     ]
   };
@@ -205,16 +207,8 @@ $(document).ready(function () {
 
     // VIDEO
     $('.video-container div').each(function () {
-      let racingGameVideo = $('.racing-game-video');
-      $('#youtubePlayer').addClass('hidden');
-      racingGameVideo.addClass('hidden');
-      $(gameObject.videoClass).removeClass('hidden');
-      if (gameObject.videoClass === ".racing-game-video" && !racingGameVideo.attr('data-loaded')) {
-        let racingGameIframe = $('.racing-game-iframe');
-        const iframeSrc = $(racingGameIframe).attr('src');
-        $('.racing-game-iframe').attr('src', iframeSrc)
-        $(racingGameVideo).attr('data-loaded', 'true');
-      }
+      let youtubeIframe = $('.youtube-video-iframe');
+      youtubeIframe.attr('src', gameObject.videoUrl);
     });
 
     // FOOTER
@@ -283,4 +277,56 @@ $(document).ready(function () {
       arrowIcon.css('transform', 'rotate(180deg)');
     }
   });
+
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
+
+  // Function to load YouTube videos
+  function loadYouTubeVideos() {
+    $(".youtube-container iframe[data-src]").each(function() {
+      if (isElementInViewport(this)) {
+        var videoUrl = $(this).attr("data-src");
+        $(this).attr("src", videoUrl);
+        $(this).removeAttr("data-src");
+      }
+    });
+  }
+
+  // Add an event listener to load videos when the page is scrolled
+  $(window).on("scroll", loadYouTubeVideos);
+  $(window).on("resize", loadYouTubeVideos);
+
+  // YOUTUBE
+  // function onYouTubeIframeAPIReady() {
+  //   var player;
+  //   player = new YT.Player('youtubePlayer', {
+  //     videoId: 'td54iLMy4VY', // YouTube Video ID
+  //     // videoId: 'coHIXJtTT3k', // YouTube Video ID
+  //     width: 560,               // Player width (in px)
+  //     height: 316,              // Player height (in px)
+  //     playerVars: {
+  //       autoplay: 0,        // Auto-play the video on load
+  //       controls: 1,        // Show pause/play buttons in player
+  //       showinfo: 0,        // Hide the video title
+  //       modestbranding: 1,  // Hide the Youtube Logo
+  //       loop: 1,            // Run the video in a loop
+  //       fs: 0,              // Hide the full screen button
+  //       cc_load_policy: 0, // Hide closed captions
+  //       iv_load_policy: 3,  // Hide the Video Annotations
+  //       autohide: 0         // Hide video controls when playing
+  //     },
+  //     events: {
+  //       onReady: function(e) {
+  //         e.target.mute();
+  //       }
+  //     }
+  //   });
+  // }
+
 });
