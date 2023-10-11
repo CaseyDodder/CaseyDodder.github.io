@@ -5,7 +5,7 @@ $(document).ready(function () {
     gameTitle: 'Retro Rally!',
     heroImage:'images/retro-rally/main-image.jpg',
     actionIcon: false,
-    sliderClass: '.racing-game-slider',
+    sliderClass: '.default-slider',
     sliderImages: [
       'images/retro-rally/compressed/mushroom-track.jpg',
       'images/retro-rally/compressed/island-track.jpg',
@@ -69,7 +69,7 @@ $(document).ready(function () {
     gameTitle: 'Disc Golf Arcade',
     heroImage: 'images/disc-golf-arcade/main-image.png',
     actionIcon: true,
-    sliderClass: '.default-slider',
+    sliderClass: '.disc-golf-game-slider',
     sliderImages: [
       'images/disc-golf-arcade/compressed/woods-2.jpg',
       'images/disc-golf-arcade/compressed/farm.jpg',
