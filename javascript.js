@@ -297,7 +297,7 @@ $(document).ready(function () {
   }
 
   // Add an event listener to load videos when the page is scrolled
-  $(window).on("scroll", loadYouTubeVideos, {passive: true});
+  $(window).on("scroll touchmove", loadYouTubeVideos, {passive: true});
   $(window).on("resize", loadYouTubeVideos, {passive: true});
   $(window).on('touchstart', function() {}, {passive: true});
 
