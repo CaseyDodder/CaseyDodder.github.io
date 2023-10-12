@@ -129,7 +129,6 @@ $(document).ready(function () {
   };
 
   $('.game-menu-link').on('click', function() {
-    console.log($(this).attr('class'));
     if ($(this).hasClass('racing-game-menu-btn')) {
       gameMenuItemSwitch('racing-game');
     }
@@ -192,12 +191,11 @@ $(document).ready(function () {
     // About Game Section.
     $('.about-game__container').empty();
     gameObject.features.forEach(function (value) {
-      console.log(value);
       $('.about-game__container').append(`
         <div class="game-mode-dropdown">
           <div class="game-mode-dropdown--innner">
             ${value[2]}
-            <span class="game-mode-title">${value[0]}</span>
+            <span class="tab-text game-mode-title">${value[0]}</span>
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="game-mode-dropdown-copy hidden">${value[1]}</div>

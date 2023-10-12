@@ -14,33 +14,33 @@ header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     background-color: rgb(0, 0, 0);
     color: #4dd325;
     padding: 0px 20px;
     box-sizing: border-box;
-    /* box-shadow: 0px 2px 4px rgb(0, 0, 0);
-    z-index: 1; */
-    /* text-align: center; */
-    /* padding: 1em 0; */
-    /* height: 200px; */
-    /* @media screen and w {
-      
-    } */
 }
 .games-links {
-  /* margin-left: auto; */
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 0px 10px;
   box-sizing: border-box;
   background-color:#55b43a;
   box-shadow: 0px 1px 1px #55b43a;
   z-index: 2;
+  box-sizing: border-box;
+  height: 40px;
+  max-height: 40px;
 }
 .game-menu-link {
   font-weight: bold;
-  color: rgb(240, 240, 240);
+  color: rgb(24, 24, 24);
+  padding: 10px 0px;
+  box-sizing: border-box;
+  height: 100%;
+}
+.game-menu-link:hover {
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
 }
 .games-links span {
   cursor: pointer;
@@ -57,7 +57,6 @@ header {
   background-color: rgb(40, 40, 40);
   color: rgb(240, 240, 240);
   z-index: 1;
-  /* background: linear-gradient(to bottom, rgba(204, 204, 204, 0.3), rgba(100, 100, 100, .5)); */
 }
 .fa-chevron-down {
   position: absolute !important;
@@ -72,14 +71,12 @@ header .icon {
   height: 50%;
   margin-right: 20px;
   align-self: center;
-  /* margin: 0 auto; */
 }
 .container {
   position: relative;
   max-width: 100%;
   width: 1200px;
   margin: 0 auto;
-  /* padding: 2em; */
   text-align: center;
 }
 .game {
@@ -94,8 +91,7 @@ header .icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* border: 1px solid orange; */
-  /* height: 300px; */
+  min-height: 500px;
 }
 .hero-mask {
   content: "";
@@ -109,7 +105,6 @@ header .icon {
   z-index: 2;
 }
 .hero-container .hero-container-img {
-  /* position: absolute; */
   top: 0;
   width: 100%;
 }
@@ -143,28 +138,22 @@ header .icon {
   display: flex;
   justify-content: center;
   margin: 0px auto 0px auto;
-  /* background: linear-gradient(to bottom, #555555, #000000); */
   background-size: 100% 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  min-height: 150px;
 }
 .mic-container {
   position: relative;
-  /* border: 1px solid red; */
   width: 85%;
   padding: 40px 0px 10px 0px;
   max-height: 450px;
   z-index: 4;
   box-sizing: border-box;
-  
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-around; */
 }
 .mic-slider {
   position: relative;
   max-height: 100%;
-  /* max-width: 65%; */
   margin: 0 auto;
 }
 .mic-slider__image {
@@ -180,11 +169,6 @@ header .icon {
 .slick-track {
   display: flex;
 }
-/* .slick-current {
-  position: relative;
-  transform: translateY(-50px);
-  min-height: 325px;
-} */
 .slick-next {
   position: absolute;
   right: -40px;
@@ -220,7 +204,6 @@ header .icon {
 }
 .about-game {
   padding: 20px 0px;
-  /* background: linear-gradient(to bottom, #888888, #555555); */
   background-size: 100% 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -239,7 +222,6 @@ header .icon {
   flex-direction: column;
   justify-content: center;
   padding: 20px 0px 20px 0px;
-  /* background: linear-gradient(to bottom, #888888, #555555); */
   background-size: 100% 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -249,7 +231,7 @@ header .icon {
   flex-direction: column;
   cursor: pointer;
   margin: 5px 5%;
-  background-color: gray;
+  background-color: #595959;
 }
 .game-mode-dropdown--innner {
   position: relative;
@@ -270,17 +252,12 @@ header .icon {
 .video-container {
   display: flex;
   justify-content: center;
-  /* border: 1px solid yellow; */
 }
 .disc-golf-game-video {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-/* .reviews-container {
-  height: 200px;
-  border: 1px solid green;
-} */
 footer {
   padding: 40px 0px 0px 0px;
 }
@@ -329,15 +306,7 @@ footer .copyright {
   .mic-container {
     width: 100%;
     margin: 20px 0px 0px 0px;
-    /* display: inline-flex; */
-    /* flex-direction: column; */
   }
-  /* .mic-slider {
-    order: 2;
-  }
-  .mic-img-and-copy {
-    order: 1;
-  } */
   .slick-prev{
     left: 20px;
   }
