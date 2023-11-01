@@ -38,6 +38,10 @@ header {
   box-sizing: border-box;
   height: 100%;
 }
+.menu-tab-border {
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
+}
 .game-menu-link:hover {
   border-bottom: 2px solid white;
   box-sizing: border-box;
@@ -93,6 +97,17 @@ header .icon {
   justify-content: center;
   aspect-ratio: 16/5;
 }
+.hero-container .wishlist-button {
+  display: flex;
+  position: absolute;
+  border-radius: 10px;
+  left: 10%;
+  bottom: 20px;
+  border: 2px solid rgb(100, 100, 100);
+}
+.hero-container .wishlist-button img {
+  border-radius: 10px;
+}
 .hero-mask {
   content: "";
   position: absolute;
@@ -120,7 +135,7 @@ header .icon {
   height: 50px;
 }
 
-.hero-action-icon {
+.google-play-icon {
   position: absolute;
   display: flex;
   width: 200px;
@@ -131,7 +146,7 @@ header .icon {
   transform: translate(-50%, -50%);
   z-index: 4;
 }
-.hero-action-icon img {
+.google-play-icon img {
   max-width: 200px;
 }
 .slick-slider-section {
@@ -303,11 +318,11 @@ footer .copyright {
   .mic-img-and-copy-container {
     flex: .3;
   }
-  .hero-action-icon {
+  .google-play-icon {
     left: 35%;
     top: 85%;
   }
-  .hero-action-icon img {
+  .google-play-icon img {
     max-width: 150px;
   }
   .mic-container {

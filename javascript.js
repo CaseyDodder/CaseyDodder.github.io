@@ -4,7 +4,8 @@ $(document).ready(function () {
   const racingGameObject = {
     gameTitle: 'Retro Rally!',
     heroImage:'images/retro-rally/main-image.jpg',
-    actionIcon: false,
+    actionIcon: true,
+    actionIconClass: '.retro-rally-wishlist-btn',
     sliderClass: '.default-slider',
     sliderImages: [
       'images/retro-rally/compressed/mushroom-track.jpg',
@@ -54,10 +55,10 @@ $(document).ready(function () {
       ],
     ],
     videoClass: '#youtubePlayer',
-    videoUrl: 'https://www.youtube.com/embed/td54iLMy4VY?si=-YD87rQy9f1fnLYz',
+    videoUrl: 'https://www.youtube.com/embed/kcQjF_omcOg?si=2bBhW4rnST5odQWK',
     socialButtons: [
       [
-        `<img src="images/retro-rally/steam-wishlist.jpg" style="max-width: 150px;">`,
+        `<a class="wishlist-button" href="https://store.steampowered.com/app/2669620/Retro_Rally/"><img src="images/retro-rally/steam-wishlist.jpg" alt="Retro Rally Steam Wishlist Banner" style="max-width: 150px;"></a>`,
       ],
       [
         `<a href="https://twitter.com/cuscutagames"><i class="fab fa-twitter"></i></a>`,
@@ -69,6 +70,7 @@ $(document).ready(function () {
     gameTitle: 'Disc Golf Arcade',
     heroImage: 'images/disc-golf-arcade/main-image.png',
     actionIcon: true,
+    actionIconClass: '.disc-golf-arcade-cta-btn',
     sliderClass: '.disc-golf-game-slider',
     sliderImages: [
       'images/disc-golf-arcade/compressed/woods-2.jpg',
@@ -98,22 +100,22 @@ $(document).ready(function () {
       [
         "Hole Challenges",
         "Immerse yourself in the game as you aim to conquer hole-specific objectives. Whether it's escaping the clutches of jumping sharks or navigating through turbulent tornadoes, each hole brings a new, exciting challenge to master.",
-        `<i class="fas fa-users"></i>`,
+        `<i class="fas fa-tasks"></i>`,
       ],
       [
         "Stat Tracking",
         "Track your best round on each course, count your total aces, work to improve your average course score and aim for the most aces in a single round.",
-        `<i class="fas fa-stopwatch"></i>`,
+        `<i class="fas fa-chart-bar"></i>`,
       ],
       [
         "Gameplay Mechanics",
         "Engage in gameplay reminiscent of puzzle-solving as you decipher the optimal trajectory for each throw. Every shot requires careful planning and precision. Navigate the unpredictable wind patterns that affect your disc's flight path. Factor in wind speed and direction to make those critical shots. Embrace the versatility of your disc by mastering the art of ground bounces. Bounce your disc strategically to navigate tricky terrains and achieve those hard-to-reach targets.",
-        `<i class="fas fa-flag-checkered"></i>`,
+        `<i class="fas fa-gamepad"></i>`,
       ],
       [
         "Unique Challenges",
         "Navigate unpredictable hazards like jumping sharks, tornadoes, and more, while conquering hole-specific objectives and unlocking content along the way.",
-        `<i class="fas fa-car-crash"></i>`,
+        `<i class="fas fa-fingerprint"></i>`,
       ],
     ],
     videoClass: '.disc-golf-game-video',
@@ -129,6 +131,8 @@ $(document).ready(function () {
   };
 
   $('.game-menu-link').on('click', function() {
+    $('.game-menu-link').removeClass('menu-tab-border');
+    $(this).addClass('menu-tab-border');
     if ($(this).hasClass('racing-game-menu-btn')) {
       gameMenuItemSwitch('racing-game');
     }
@@ -138,6 +142,7 @@ $(document).ready(function () {
   });
 
   function gameMenuItemSwitch (gameName) {
+    $('.hero-action-icon').hide();
     switch (gameName) {
       case 'racing-game':
         populateGameItems(racingGameObject);
@@ -163,10 +168,10 @@ $(document).ready(function () {
     }
     $('.game-header-title').html(gameObject.gameTitle);
     if (gameObject.actionIcon) {
-      $('.hero-action-icon').show();
+      $(gameObject.actionIconClass).show();
     }
     else {
-      $('.hero-action-icon').hide();
+      $(gameObject.actionIconClass).hide();
     }
     // Slick Slider.
     $(currentSliderClass).addClass('hidden');
