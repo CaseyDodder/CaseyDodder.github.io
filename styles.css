@@ -10,6 +10,31 @@ body {
     background-color: rgb(30, 30, 30);
     color: white;
 }
+/* Pulsing Button Block */
+
+.pulse-background {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  height: 75px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 0 rgba(150, 150, 150, 0.4);
+  -moz-animation: pulse 2.5s infinite;
+  -webkit-animation: pulse 2.5s infinite;
+  animation: pulse 2.5s infinite;
+  }
+  
+  @keyframes pulse {
+      0% {
+          box-shadow: 0 0 0 0 rgb(150, 150, 150, 1);
+      }
+      70% {
+          box-shadow: 0 0 0 10px rgba(134, 134, 134, 0);
+      }
+      100% {
+          box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+      }
+  }
 header {
     width: 100%;
     display: flex;
@@ -101,9 +126,16 @@ header .icon {
   display: flex;
   position: absolute;
   border-radius: 10px;
-  left: 10%;
+  left: 20px;
   bottom: 20px;
   border: 2px solid rgb(100, 100, 100);
+}
+.retro-rally-wishlist-btn,
+.pulse-background {
+  width: 250px;
+}
+.retro-rally-wishlist-btn img {
+  width: 100%;
 }
 .hero-container .wishlist-button img {
   border-radius: 10px;
@@ -341,4 +373,16 @@ footer .copyright {
   .mic-img-and-copy-container__copy {
     font-size: 14px;
   }
+  .hero-container .wishlist-button,
+  .pulse-background {
+    margin: 0px;
+    left: 0px;
+    bottom: 0px;
+  }
+  .retro-rally-wishlist-btn,
+  .pulse-background {
+    width: 100px;
+    height: 30px;
+  }
 }
+

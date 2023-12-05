@@ -135,9 +135,11 @@ $(document).ready(function () {
     $(this).addClass('menu-tab-border');
     if ($(this).hasClass('racing-game-menu-btn')) {
       gameMenuItemSwitch('racing-game');
+      $('.pulse-background').show();
     }
     else if ($(this).hasClass('disc-golf-arcade-menu-btn')) {
       gameMenuItemSwitch('disc-golf-game');
+      $('.pulse-background').hide();
     }
   });
 
